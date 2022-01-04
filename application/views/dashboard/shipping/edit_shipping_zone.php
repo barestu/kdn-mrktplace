@@ -7,7 +7,7 @@
                     <h3 class="box-title"><?= trans('edit_shipping_zone'); ?></h3>
                 </div>
                 <div class="right">
-                    <a href="<?php echo generate_dash_url("shipping_settings"); ?>" class="btn btn-success btn-add-new">
+                    <a href="<?php echo generate_admin_url("shipping_settings"); ?>" class="btn btn-success btn-add-new">
                         <i class="fa fa-list-ul"></i>&nbsp;&nbsp;<?= trans('shipping_zones'); ?>
                     </a>
                 </div>

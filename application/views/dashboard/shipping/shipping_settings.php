@@ -8,7 +8,7 @@
                     <h3 class="box-title"><?= trans("shipping_zones"); ?></h3>
                 </div>
                 <div class="right">
-                    <a href="<?= generate_dash_url("add_shipping_zone"); ?>" class="btn btn-success btn-add-new">
+                    <a href="<?= generate_admin_url("add_shipping_zone"); ?>" class="btn btn-success btn-add-new">
                         <i class="fa fa-plus"></i>&nbsp;&nbsp;<?= trans("add_shipping_zone"); ?>
                     </a>
                 </div>
@@ -68,7 +68,7 @@
                                             </td>
                                             <td style="width: 120px;">
                                                 <div class="btn-group btn-group-option">
-                                                    <a href="<?= generate_dash_url("edit_shipping_zone"); ?>/<?= $shipping_zone->id; ?>" class="btn btn-sm btn-default btn-edit" data-toggle="tooltip" title="<?= trans('edit'); ?>"><i class="fa fa-edit"></i></a>
+                                                    <a href="<?= generate_admin_url("edit_shipping_zone"); ?>/<?= $shipping_zone->id; ?>" class="btn btn-sm btn-default btn-edit" data-toggle="tooltip" title="<?= trans('edit'); ?>"><i class="fa fa-edit"></i></a>
                                                     <a href="javascript:void(0)" class="btn btn-sm btn-default btn-delete" data-toggle="tooltip" title="<?= trans('delete'); ?>" onclick="delete_item('dashboard_controller/delete_shipping_zone_post','<?= $shipping_zone->id; ?>','<?= trans("confirm_delete"); ?>');"><i class="fa fa-trash-o"></i></a>
                                                 </div>
                                             </td>

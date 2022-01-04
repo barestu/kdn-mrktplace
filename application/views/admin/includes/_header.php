@@ -494,6 +494,13 @@
                     </ul>
                 </li>
 
+                <li class="nav-shipping-settings">
+                    <a href="<?php echo admin_url(); ?>shipping-settings">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <span><?php echo trans("shipping_settings"); ?></span>
+                    </a>
+                </li>
+
             </ul>
         </section>
         <!-- /.sidebar -->

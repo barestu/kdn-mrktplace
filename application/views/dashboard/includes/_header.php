@@ -253,14 +253,14 @@
                             <span><?php echo trans("shop_settings"); ?></span>
                         </a>
                     </li>
-                    <?php if ($this->is_sale_active): ?>
+                    <!-- <?php if ($this->is_sale_active): ?>
                         <li class="nav-shipping-settings">
                             <a href="<?= generate_dash_url("shipping_settings"); ?>">
                                 <i class="fa fa-truck"></i>
                                 <span><?php echo trans("shipping_settings"); ?></span>
                             </a>
                         </li>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                 </ul>
             </div>
         </section>

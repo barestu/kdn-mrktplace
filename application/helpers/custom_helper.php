@@ -482,6 +482,18 @@ if (!function_exists('generate_url')) {
     }
 }
 
+//generate admin url
+if (!function_exists('generate_admin_url')) {
+    function generate_admin_url($route_1, $route_2 = null)
+    {
+        if (!empty($route_2)) {
+            return admin_url() . get_route($route_1, true) . get_route($route_2);
+        } else {
+            return admin_url() . get_route($route_1);
+        }
+    }
+}
+
 //generate dash url
 if (!function_exists('generate_dash_url')) {
     function generate_dash_url($route_1, $route_2 = null)
@@ -2117,4 +2129,3 @@ if (!function_exists('add_https')) {
         }
     }
 }
-?>

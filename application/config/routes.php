@@ -172,9 +172,9 @@ foreach ($languages as $language) {
         $route[$key . getr('dashboard', $rts) . '/' . getr('comments', $rts)]['GET'] = 'dashboard_controller/comments';
         $route[$key . getr('dashboard', $rts) . '/' . getr('reviews', $rts)]['GET'] = 'dashboard_controller/reviews';
         $route[$key . getr('dashboard', $rts) . '/' . getr('shop_settings', $rts)]['GET'] = 'dashboard_controller/shop_settings';
-        $route[$key . getr('dashboard', $rts) . '/' . getr('shipping_settings', $rts)]['GET'] = 'dashboard_controller/shipping_settings';
-        $route[$key . getr('dashboard', $rts) . '/' . getr('add_shipping_zone', $rts)]['GET'] = 'dashboard_controller/add_shipping_zone';
-        $route[$key . getr('dashboard', $rts) . '/' . getr('edit_shipping_zone', $rts) . '/(:num)']['GET'] = 'dashboard_controller/edit_shipping_zone/$1';
+        $route[$key . getr('admin', $rts) . '/' . getr('shipping_settings', $rts)]['GET'] = 'dashboard_controller/shipping_settings';
+        $route[$key . getr('admin', $rts) . '/' . getr('add_shipping_zone', $rts)]['GET'] = 'dashboard_controller/add_shipping_zone';
+        $route[$key . getr('admin', $rts) . '/' . getr('edit_shipping_zone', $rts) . '/(:num)']['GET'] = 'dashboard_controller/edit_shipping_zone/$1';
         $route[$key . getr('dashboard', $rts) . '/' . getr('refund_requests', $rts)]['GET'] = 'dashboard_controller/refund_requests';
         $route[$key . getr('dashboard', $rts) . '/' . getr('refund_requests', $rts) . '/(:num)']['GET'] = 'dashboard_controller/refund/$1';
         //support
