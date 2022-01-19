@@ -34,11 +34,11 @@
     </div>
 <?php endif; ?>
 
-<?php if ($show_shipping_options_warning): ?>
+<!-- <?php if ($show_shipping_options_warning): ?>
     <div class="alert alert-danger alert-large">
         <i class="fa fa-warning"></i>&nbsp;&nbsp;<?= trans("vendor_no_shipping_option_warning"); ?>&nbsp;<a href="<?= generate_dash_url("shipping_settings"); ?>" target="_blank" class="link-blue"><?= trans("shipping_settings"); ?></a>
     </div>
-<?php endif; ?>
+<?php endif; ?> -->
 
 
 <div class="row">
