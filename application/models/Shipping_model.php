@@ -40,7 +40,7 @@ class Shipping_model extends CI_Model
                     $item->total_shipping_cost = 0;
                     $item->shop_name = get_shop_name($seller);
                     $item->methods = array();
-                    $shipping_methods = $this->get_cart_shipping_methods($seller->id, $state_id);
+                    $shipping_methods = $this->get_cart_shipping_methods($state_id);
                     if (!empty($shipping_methods)) {
                         foreach ($shipping_methods as $shipping_method) {
                             $method = new stdClass();
@@ -110,7 +110,7 @@ class Shipping_model extends CI_Model
     }
 
     //get cart shipping methods
-    public function get_cart_shipping_methods($seller_id, $state_id)
+    public function get_cart_shipping_methods($state_id)
     {
         $continent_code = "";
         $country_id = "";
@@ -128,16 +128,16 @@ class Shipping_model extends CI_Model
             $zone_locations = array();
             $zone_ids = array();
             if (!empty($state->id)) {
-                $zone_locations = $this->db->where('state_id', clean_number($state->id))->where('user_id', clean_number($seller_id))->get('shipping_zone_locations')->result();
+                $zone_locations = $this->db->where('state_id', clean_number($state->id))->get('shipping_zone_locations')->result();
             }
 
             //get shipping options by country
             if (empty($zone_locations) && (!empty($country_id))) {
-                $zone_locations = $this->db->where('country_id', clean_number($country_id))->where('state_id', 0)->where('user_id', clean_number($seller_id))->get('shipping_zone_locations')->result();
+                $zone_locations = $this->db->where('country_id', clean_number($country_id))->where('state_id', 0)->get('shipping_zone_locations')->result();
             }
             //get shipping options by continent
             if (empty($zone_locations) && (!empty($continent_code))) {
-                $zone_locations = $this->db->where('continent_code', clean_str($continent_code))->where('country_id', 0)->where('state_id', 0)->where('user_id', clean_number($seller_id))->get('shipping_zone_locations')->result();
+                $zone_locations = $this->db->where('continent_code', clean_str($continent_code))->where('country_id', 0)->where('state_id', 0)->get('shipping_zone_locations')->result();
             }
             if (!empty($zone_locations)) {
                 foreach ($zone_locations as $location) {
@@ -146,7 +146,7 @@ class Shipping_model extends CI_Model
             }
             //get shipping methods
             if (!empty($zone_ids)) {
-                return $this->db->where_in('zone_id', $zone_ids, FALSE)->where('user_id', clean_number($seller_id))->where('status', 1)->order_by("FIELD(method_type, 'free_shipping', 'local_pickup', 'flat_rate')")->get('shipping_zone_methods')->result();
+                return $this->db->where_in('zone_id', $zone_ids, FALSE)->where('status', 1)->order_by("FIELD(method_type, 'free_shipping', 'local_pickup', 'flat_rate')")->get('shipping_zone_methods')->result();
             }
         }
         return array();
